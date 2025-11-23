@@ -1,0 +1,19 @@
+.list {
+  display: flex;
+  margin: 15px;
+  gap: 15px;
+}
+
+.btn {
+  padding: 15px 30px;
+  background-color: white;
+  border-color: lightgrey;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: blue;
+  cursor: pointer;
+}
