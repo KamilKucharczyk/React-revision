@@ -1,0 +1,19 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import css from './ContactList.module.css';
+
+export const ContactList = ({ contacts }) => (
+  <>
+    <ul className={css.list}>
+      {contacts.map(contact => (
+        <li className={css.list_el} key={contact.id}>
+          {contact.name}
+        </li>
+      ))}
+    </ul>
+  </>
+);
+
+ContactList.propTypes = {
+  contacts: PropTypes.string.isRequired,
+};
