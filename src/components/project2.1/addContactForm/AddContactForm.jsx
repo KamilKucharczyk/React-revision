@@ -3,7 +3,7 @@ import css from './AddContactForm.module.css';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
-export class AddContactForm extends Component() {
+export class AddContactForm extends Component {
   state = {
     name: '',
   };
@@ -30,9 +30,10 @@ export class AddContactForm extends Component() {
     const { name } = this.state;
     return (
       <form className={css.form} onSubmit={this.handleSubmit}>
-        <label className={css.label}>
+        <label className={css.label} htmlFor={this.nameId}>
           Name
           <input
+            id={this.nameId}
             type="text"
             name="name"
             value={name}
@@ -50,4 +51,5 @@ export class AddContactForm extends Component() {
 
 AddContactForm.propTypes = {
   name: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
