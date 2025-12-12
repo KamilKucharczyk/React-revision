@@ -2,11 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 
-export const ContactList = ({ contacts }) => (
+export const ContactList = ({ contacts, onDelete }) => (
   <ul className={css.list}>
     {contacts.map(contact => (
       <li className={css.list_el} key={contact.id}>
-        {contact.name}: {contact.number}
+        {contact.name}: {contact.number}{' '}
+        <button
+          type="button"
+          onClick={() => {
+            onDelete(contact.id);
+          }}
+        >
+          Delete
+        </button>
       </li>
     ))}
   </ul>
