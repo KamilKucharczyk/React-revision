@@ -6,7 +6,7 @@ export const ContactList = ({ contacts }) => (
   <ul className={css.list}>
     {contacts.map(contact => (
       <li className={css.list_el} key={contact.id}>
-        {contact.name}
+        {contact.name}: {contact.number}
       </li>
     ))}
   </ul>
@@ -17,6 +17,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
 };
