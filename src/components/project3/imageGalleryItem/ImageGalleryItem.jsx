@@ -11,7 +11,11 @@ class ImageGalleryItem extends Component {
     const { image } = this.props;
     return (
       <li className={css.imageGalleryItem} onClick={this.handleClick}>
-        <img src={image.webformatURL} alt={image.tags} />
+        <img
+          className={css.imageGalleryItem_image}
+          src={image.webformatURL}
+          alt={image.tags}
+        />
       </li>
     );
   }
