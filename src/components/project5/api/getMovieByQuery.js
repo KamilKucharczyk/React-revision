@@ -11,12 +11,14 @@ const getMovieByQuery = async query => {
 
   const response = await fetch(`${BASE_URL}${SEARCH_ENDPOINT}?${searchParams}`);
   if (!response.ok) {
-    throw new Error(`Fetch failed: ${response.status}`);
+    throw new Error(`Error fetching movies by quer: ${response.status}`);
   }
 
   const data = await response.json();
   const results = data.results;
-
+  if (!results) {
+    return [];
+  }
   return results;
 };
 

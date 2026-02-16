@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function TrendingList({ movies }) {
   return (
     <ul className={css.movie}>
-      {movies.map(
+      {movies?.map(
         movie =>
           movie.title && (
             <li className={css.movie_item} key={movie.id}>
